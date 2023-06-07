@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import CardBarItem1 from "../../assets/images/card-bar-item1.svg"
 const CardBarWrapper = styled.div`
-    padding:20px;
+    padding: 20px ;
     display: flex;
     align-items:center;
-    width: 140px;
+    width: 150px;
     height: 80px;
     left: 668px;
     top: 775px;
-
+    margin:0 20px;
     background: #EEEEEE;
     border-radius: 10px;
     img{
@@ -28,13 +28,13 @@ const CardBarWrapper = styled.div`
         margin:0;
     }
 `
-export const CardBar = () => {
+export const CardBar = ({title,qual}) => {
   return (
    <CardBarWrapper>
         <img src={CardBarItem1} alt="" />
         <div className="inform">
-            <p>Total Visits</p>
-            <p>10.8m</p>
+            <p>{title}</p>
+            <p>{qual}</p>
         </div>
    </CardBarWrapper>
   )

@@ -8,13 +8,15 @@ import { Overview } from 'components/Overview';
 import ChartPie from 'components/ChartPie';
 import { CardBar } from 'components/CardBar';
 import { CardProductBar } from 'components/CardProductBar';
+import { PercentBar } from 'components/PercentBar';
 
 
 const DashboardWrapper = styled.div`
 /* display: flex;
 flex-direction:row; */
 width: 100%;
-
+overflow-x:hidden;
+padding-bottom:20px;
 /* .chart{
   margin:0 auto;
   .chart-item{
@@ -101,6 +103,13 @@ width: 100%;
   borderRadius:"20px",
   boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   height: "60vh",
+};
+const style2 = {
+  background: '#fff',
+  padding: '20px 40px',
+  borderRadius:"20px",
+  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+  height: "40vh",
 };
 const styleRow = {
  marginBottom:"20px",
@@ -222,16 +231,16 @@ const Dashboard = () => {
         <div style={style}>
           <Overview title={"Customers"} desc={"Information About your Customers"} >
             <div className="chart-pie-wrapper">
-              <div className="grid-item"> <ChartPie percent={85} text={"Current Customers"}/>
+              <div className="grid-item"> <ChartPie color={"#5F27CD"} percent={85} text={"Current Customers"}/>
                
               </div>
-              <div className="grid-item"> <ChartPie  percent={66} text={"Current Customers"}/>
+              <div className="grid-item"> <ChartPie color={"#6C6C6C"}  percent={66} text={"Current Customers"}/>
               
               </div>
-              <div className="grid-item"> <ChartPie  percent={90} text={"Current Customers"}/>
+              <div className="grid-item"> <ChartPie color={"#FF8918"}  percent={90} text={"Current Customers"}/>
               
               </div>
-              <div className="grid-item"> <ChartPie  percent={30} text={"Current Customers"}/>
+              <div className="grid-item"> <ChartPie color={"#FF6F61"}  percent={30} text={"Current Customers"}/>
               
               </div>
            
@@ -246,25 +255,29 @@ const Dashboard = () => {
 
      <Row gutter={24} >
       <Col  className="gutter-row column" span={16}>
-        <div style={style}>
+        <div style={style2}>
             <div className="top-bar">
-              <CardBar />
-              <CardBar />
-              <CardBar />
-              <CardBar />
+              <CardBar title={"Total Visits"} qual={"10.8m"}/>
+              <CardBar title={"Total Sales"} qual={100.345}/>
+              <CardBar title={"Total Mades"} qual={"200k$"}/>
+              <CardBar title={"Orders Completed"} qual={30000}/>
             </div>
             <h1>Top Products</h1>
             <div className="top-product-bar">
-              <CardProductBar />
-              <CardProductBar />
+              <CardProductBar name="Nike Jordan 1 2019" type={"Pink - 50 orders"}/>
+              <CardProductBar name="Gucci Winter 2023" type={"Red - 103 orders"}/>
 
             </div>
         </div>
       </Col>
       <Col className="gutter-row column" span={8}>
-        <div style={style}>
+        <div style={style2}>
           <Overview title={"Target Customers"} desc={"Information about store visits"} >
-            
+            <PercentBar title={"Women"} percent={63} color={"#6C6C6C"}/>
+            <PercentBar title={"Men"} percent={88} color={"#FF6B6B"}/>
+
+            <PercentBar title={"Kids"} percent={38} color={"#5F27CD"}/>
+
             
           </Overview>
              {/* <div>sdsad</div> */}

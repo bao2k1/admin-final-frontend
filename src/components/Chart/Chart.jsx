@@ -77,7 +77,7 @@ const CustomBar = ({ x, y, width, height, fill }) => {
 
 const ChartComponent = () => {
   return (
-    <div style={{ height: '35vh' }}>
+    <div style={{ height: '40vh' }}>
 
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
